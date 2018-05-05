@@ -1,0 +1,30 @@
+#container {
+		border: 2px solid green;
+        padding: 10px;
+        width: 300px;
+        box-shadow: 10px 10px;
+}
+		.title{
+		font-weight: bold;
+        }
+		#card{
+        border: 2px solid green;
+         padding : 10px;
+}
+	#german-shepherd {
+      width: 300px;
+      height: 300px;
+      
+      }
+	#interesting-fact {
+      font-style: italic;
+     }
+	.animal-info {
+      font-weight: bold;
+      padding: 0;
+    
+      
+ }
+	#facts{
+	list-style-type: none;
+}
