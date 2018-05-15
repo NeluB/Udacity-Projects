@@ -1,40 +1,41 @@
-body {
-  text-align: center;
-}
+// Select color input
 
-h1 {
-  font-family: Monoton;
-  font-size: 70px;
-  margin: 0.2em;
-}
+// Select size input
+const c = document.getElementById('pixelCanvas');
+let h = $("#inputHeight");
+let w = $("#inputWidth");
 
-h2 {
-  margin: 1em 0 0.25em;
-}
+// When size is submitted by the user, call makeGrid()
+$('#inputSubmit').click(function(e) {
+  e.preventDefault();
+  makeGrid();
+});
 
-h2:first-of-type {
-  margin-top: 0.5em;
-}
+//Pick color
+let color = $("#colorPicker");
 
-table,
-tr,
-td {
-  border: 1px solid black;
-}
+function makeGrid() {
+  // Your code goes here!
+  c.innerHTML = '';
+  let height = h.val();
+  let width = w.val();
 
-table {
-  border-collapse: collapse;
-  margin: 0 auto;
-}
+  let addEvent = function(cell) {
+        cell.addEventListener('click', function() {
+        cell.style.backgroundColor = color.val();
+        });
+    }
 
-tr {
-  height: 20px;
-}
-
-td {
-  width: 20px;
-}
-
-input[type="number"] {
-  width: 6em;
+  for (let r = 0; r<height; r++) {
+        let row = c.insertRow(r);
+    //console.log("row"+r);
+    //create a row
+    //$("#pixelCanvas").append($(<tr></tr>));
+        for (let col = 0; col<width; col++) {
+         let cell = row.insertCell(col);
+         // console.log("td"+c);
+       //$("tr").last().append($(<td></td>));
+         cell.addEventListener('click', addEvent(cell));
+        }
+    }
 }
